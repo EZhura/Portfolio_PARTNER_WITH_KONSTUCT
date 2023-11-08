@@ -1,0 +1,721 @@
+/* Общие настройки */
+
+html {
+  box-sizing: border-box;
+  /* Говорит браузеру учитывать любые границы и внутренние отступы в значениях,
+       которые мы указываем в ширине и высоте элемента */
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  /* наследует значение box-sizing от родительского элемента*/
+}
+img {
+  display: block;
+  /* делаем элемент блочным */
+  max-width: 100%;
+  /*чтобы изображение сжималось, если контейнер меньше, не будет создавать горизонтальную полосу прокрутки,
+        адаптивный дизайн */
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+@font-face {
+  font-family: "Open Sans Bold";
+  src: url("../fonts/open-sans-bold/open-sans-bold.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/open-sans-bold/open-sans-bold.eot?#iefix")
+      format("embedded-opentype") /* IE6-IE8 */
+      url("../fonts/open-sans-bold/open-sans-bold.otf") format("opentype"),
+    /* Open Type Font */ url("../fonts/open-sans-bold/open-sans-bold.svg")
+      format("svg"),
+    /* Legacy iOS */ url("../fonts/open-sans-bold/open-sans-bold.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/open-sans-bold/open-sans-bold.woff") format("woff"),
+    /* Modern Browsers */ url("../fonts/open-sans-bold/open-sans-bold.woff2")
+      format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  margin: 0;
+  /* обнуляем отступы */
+  font-family: "BebasNeueBold", "Open Sans", sans-serif;
+  width: 1440px;
+  height: 2810px;
+  /* font-weight: 400; */
+  /* background: #f2f2f2; */
+}
+/* .container {
+  width: 1920px;
+  height: 700px;
+  margin: 0 auto;
+  background: #eeeff1;
+} */
+:root {
+  --accent-color: #00a4e5;
+  --text-color: #48555b;
+  --white-color: #fff;
+  --background-color: #171819;
+  --black: #000000;
+}
+
+/* задаем переменные с цветами из фигмы, чтобы потом их вызывать */
+
+/* стили для текста */
+.text-p {
+  color: #48555b;
+  font-family: "Open Sans";
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 23px; /* 176.923% */
+  letter-spacing: 0.188px;
+}
+/* переносим для p свойства текста для дальнейшего использования, далее будем просто прописывать класс где нужно p */
+
+/* Шапка */
+
+.container_header {
+  background-image: url(img/header.png);
+  background-size: cover;
+  width: 1438px;
+  height: 769px;
+  text-align: center;
+}
+.logo {
+  padding-top: 41px;
+  padding-left: 668px;
+  margin-bottom: 307px;
+}
+.text_partners h1 {
+  /* /* width: 576px; */
+  height: 70px;
+  color: #fff;
+  text-align: center;
+  font-family: "Bebas Neue";
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  padding-left: 31px;
+}
+.text_partners h4 {
+  color: #fff;
+  text-align: center;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 221px;
+}
+.text_partners h5 {
+  color: var(--white-color);
+  font-family: "Open Sans";
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+.text_partners {
+}
+.scroll {
+}
+
+/* Секция Navbar */
+.navbar {
+  width: 1442px;
+  height: 65px;
+  margin-bottom: 57px;
+}
+.nav_container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.nav_logo {
+  width: 80px;
+  margin-left: 43px;
+  padding-top: 10px;
+}
+.logo_black {
+  width: 79.527px;
+  height: 18px;
+}
+.nav_menu {
+  width: 450px;
+  padding-top: 10px;
+  margin-right: 40px;
+}
+.nav_menu_items {
+  display: flex;
+  justify-content: space-between;
+}
+.nav_menu_item {
+  list-style: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #48555b;
+  font-family: OpenSans;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.091px;
+  cursor: pointer;
+}
+a {
+  text-decoration: none; /*убираем подчеркивание текста ссылок*/
+  color: var(--text-color);
+}
+a:hover {
+  color: var(--accent-color);
+}
+@media only screen and (max-width: 1280px) {
+}
+@media only screen and (max-width: 992px) {
+  .nav_menu_item {
+    margin-bottom: 15px;
+    font-size: 150%;
+  }
+  .nav_container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .header_menu {
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-left: 30px;
+  }
+  .nav_menu_items {
+    flex-direction: column;
+    padding-top: 25px;
+  }
+  .container_header {
+    width: 100%;
+    background-size: 100%;
+  }
+  .logo {
+    padding-left: 50px;
+  }
+  h1,
+  h4,
+  h5 {
+    text-align: start;
+    padding-left: 50px;
+  }
+  h1 {
+    margin-bottom: 150px;
+  }
+  .text_partners {
+    margin-right: 1200px;
+  }
+  .text_partners h4 {
+    margin-bottom: 0;
+  }
+  .scroll {
+    padding-left: 50px;
+    color: var(--white-color);
+    padding-top: 50px;
+  }
+}
+
+/* Секция About */
+.about {
+  width: 941px;
+  height: 344px;
+  margin-bottom: 120px;
+}
+.container_about {
+  display: flex;
+  padding-left: 251px;
+  padding-top: 58px;
+}
+.about_h3 {
+  text-transform: uppercase;
+  color: var(--text-color);
+  text-align: center;
+  font-family: "Open Sans Bold";
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2.306px;
+  padding-left: 502px;
+  margin-bottom: 10px;
+}
+.line {
+  width: 50px;
+  height: 2px;
+  background: var(--accent-color);
+  margin-left: 697px;
+}
+.about_text {
+  margin-right: 75px;
+}
+.about__accent {
+  color: var(--accent-color);
+}
+.h3_about_text {
+  text-align: left;
+  width: 405.076px;
+  height: 81px;
+  color: var(--text-color);
+  font-family: "Open Sans Bold";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 23px;
+  letter-spacing: 1.5px;
+  width: 405.076px;
+  height: 81px;
+  margin-bottom: 55px;
+}
+.p_about_text {
+  letter-spacing: 0.19px;
+}
+.about_img {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 19px;
+  min-width: 458px;
+}
+.about_img img {
+  width: 140px;
+  height: 224px;
+  margin-top: 26px;
+}
+
+@media only screen and (max-width: 992px) {
+  .container_about {
+    padding-left: 50px;
+    flex-wrap: wrap;
+  }
+  .about_h3 {
+    padding-top: 200px;
+    padding-left: 0px;
+  }
+  .h3_about_text {
+    font-size: 150%;
+  }
+  .about_img {
+    width: 100%;
+  }
+  .about_img img {
+    width: 150%;
+    height: auto;
+  }
+  .p_about_text {
+    font-size: 150%;
+  }
+  .line {
+    margin-left: 444px;
+  }
+}
+/* Секция Services */
+.Services {
+  width: 940px;
+  height: 446px;
+  margin: 0 auto;
+  margin-bottom: 115px;
+}
+.services_text {
+  min-width: 940px;
+  display: flex;
+  margin-bottom: 80px;
+}
+.Services_title {
+}
+.services_img {
+  padding-top: 31px;
+  padding-left: 23px;
+  margin-bottom: 24px;
+}
+.title_h4 {
+  width: 200px;
+  color: #48555b;
+  font-family: "Open Sans";
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2.306px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  text-align: left;
+  margin-right: 155px;
+}
+.Services_line {
+  margin-left: 0px;
+}
+.Services_p {
+  color: #48555b;
+  font-family: "Open Sans";
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 19px; /* 172.727% */
+  letter-spacing: 0.2px;
+  width: 405.404px;
+  height: 38px;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 31px;
+}
+button {
+  width: 150px;
+  height: 40px;
+  background: var(--accent-color);
+  color: #fff;
+  text-align: center;
+  font-family: "Open Sans";
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.Services_button {
+}
+.services_cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  width: 100%;
+}
+.services_cards_item {
+  width: 295px;
+  height: 330px;
+}
+.cards_h4 {
+  width: 90%;
+  height: 48px;
+  flex-direction: column;
+  justify-content: center;
+  color: #48555b;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px; /* 150% */
+  letter-spacing: 0.427px;
+  text-transform: uppercase;
+  margin-bottom: 0px;
+  text-align: left;
+  padding-left: 23px;
+  margin-bottom: 13px;
+}
+.cards_p {
+  padding-left: 20px;
+  width: 250px;
+  height: 92px;
+  justify-content: center;
+  color: #48555b;
+  font-family: "Open Sans";
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 23px; /* 176.923% */
+  letter-spacing: 0.188px;
+}
+@media only screen and (max-width: 992px) {
+  .about {
+    margin-bottom: 800px;
+  }
+  .Services {
+    margin-left: 50px;
+  }
+  .title_h4 {
+    padding-left: 0;
+  }
+}
+/* Секция Request */
+.request {
+  width: 1440px;
+  height: 498.24px;
+  background-image: url(img/get-in-touch_bg.png);
+}
+.container_request {
+  text-align: center;
+}
+.request_h2 {
+  color: #48555b;
+  text-align: center;
+  font-family: "Open Sans";
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 36px; /* 120% */
+  letter-spacing: 0.15px;
+  padding-top: 119px;
+  margin-bottom: 34px;
+}
+@media only screen and (max-width: 992px) {
+  .request_h2 {
+    text-align: left;
+    padding-left: 250px;
+  }
+  .button {
+    text-align: left;
+    padding-left: 300px;
+  }
+}
+
+/* Секция Newsletter */
+
+.Newsletter {
+  width: 100%;
+  height: 100px;
+  background: #171819;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  /* gap: 70px; */
+  /* justify-content: center;
+  align-items: center; */
+}
+/* .container_newsletter {
+  width: 1200px;
+  height: 40px;
+  margin: 0 auto; }*/
+
+.Newsletter_text {
+  color: #fff;
+  letter-spacing: 0.846px;
+  text-align: center;
+  font-family: "Open Sans";
+  font-size: 22px;
+  font-weight: 700;
+  width: 100%;
+  margin-left: 273px;
+  margin-right: 0px;
+  padding-right: 0px;
+  padding-bottom: 2px;
+}
+.Newsletter_input {
+  /* width: 400px; */
+  display: flex;
+  border-right-width: 50px;
+  padding-right: 376px;
+}
+.mail_form {
+  width: 250px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  padding-left: 17px;
+}
+@media only screen and (max-width: 992px) {
+  .Newsletter {
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: start;
+    justify-items: start;
+    text-align: left;
+  }
+  .Newsletter_text {
+    margin-left: 0px;
+    padding-right: 700px;
+  }
+}
+
+/* Секция Footer */
+
+.footer {
+  width: 1440px;
+  height: 240px;
+  background: #141a20;
+  margin: 0 auto;
+}
+.container_footer {
+  width: 940px;
+  padding-top: 39px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.footer_company {
+  width: 250px;
+  height: 148px;
+}
+.company_p {
+  color: #fff;
+  text-align: left;
+  font-family: "Open Sans";
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.846px;
+  text-transform: uppercase;
+  margin-bottom: 21px;
+}
+.company_logo {
+  width: 101.618px;
+  height: 23px;
+  margin-bottom: 15px;
+}
+.company_p_text {
+  width: 250px;
+  height: 76px;
+  color: #fff;
+  font-family: "Open Sans";
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 19px; /* 172.727% */
+  letter-spacing: 0.85px;
+}
+.footer_links {
+  width: 262px;
+  height: 150px;
+  margin-left: 35px;
+}
+.footer_links_p {
+  color: #fff;
+  font-family: "Open Sans";
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.846px;
+  text-transform: uppercase;
+}
+.footer_links_items {
+  display: flex;
+  justify-content: space-between;
+}
+.footer_links_item-1 {
+  color: #fff;
+  font-family: "Open Sans";
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 25px; /* 227.273% */
+  letter-spacing: 0.846px;
+}
+.footer_menu_items {
+  color: #fff;
+  padding-left: 0px;
+}
+.footer_menu_item {
+  list-style: none;
+  text-decoration: none;
+  color: #fff;
+  font-family: "Open Sans";
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 25px; /* 227.273% */
+  letter-spacing: 0.846px;
+  text-transform: uppercase;
+}
+.footer_menu_item a {
+  color: #fff;
+  font-family: "Open Sans";
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px; /* 227.273% */
+  letter-spacing: 0.846px;
+}
+.footer_links_item-2 {
+}
+.footer_links_item-3 {
+}
+.footer_contacts {
+  width: 141px;
+  margin-left: 32px;
+}
+.contacts_p {
+  color: #fff;
+  font-family: "Open Sans";
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.846px;
+  margin-bottom: 15px;
+}
+.contacts_adress_p {
+  width: 141px;
+  height: 128px;
+  color: #fff;
+  font-family: "Open Sans";
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 16px; /* 145.455% */
+  letter-spacing: 0.846px;
+}
+.footer_socials {
+  width: 87px;
+  height: 13px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 31px;
+  margin-right: 25px;
+}
+.socials_fb {
+  /* width: 12.044px;
+  height: 12.044px; */
+  color: #fff;
+}
+.socials_twit {
+  /* width: 12.044px;
+  height: 12.044px; */
+}
+.socials_google {
+  /* width: 12.044px;
+  height: 12.044px; */
+}
+@media only screen and (max-width: 992px) {
+  .footer {
+    height: 700px;
+    justify-content: space-evenly;
+  }
+  .container_footer {
+    height: 100%;
+    flex-direction: column;
+    margin-left: 0;
+  }
+  .footer_company {
+    width: 100%;
+    padding-left: 50px;
+    padding-top: 30px;
+  }
+  .company_p_text {
+    width: 100%;
+  }
+  .footer_links {
+    width: 50%;
+    justify-content: space-evenly;
+  }
+  .footer_contacts {
+    width: 100%;
+  }
+  .footer_menu_item a {
+    font-size: 15px;
+  }
+  .footer_socials {
+    padding-top: 0px;
+    margin-right: 0px;
+    margin-left: 50px;
+    padding-bottom: 50px;
+    width: 50%;
+  }
+  .social_img {
+    width: auto;
+    height: 30px;
+  }
+}
+/* Секция Copyright */
+.copyright {
+  width: 1440px;
+  height: 60px;
+  background: #171819;
+}
+.copyright_p {
+  color: #fff;
+  font-family: "Open Sans";
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.846px;
+  text-align: center;
+  padding-top: 18px;
+  padding-left: 10px;
+}
+@media only screen and (max-width: 992px) {
+  .copyright_p {
+    text-align: left;
+    margin-left: 50px;
+  }
+}
