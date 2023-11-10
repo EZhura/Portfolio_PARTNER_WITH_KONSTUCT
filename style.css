@@ -1,5 +1,6 @@
 /* Общие настройки */
-
+/* подключаем шрифты */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600;700;800&family=Oswald:wght@400;500;700&family=Roboto:wght@400;500&display=swap");
 html {
   box-sizing: border-box;
   /* Говорит браузеру учитывать любые границы и внутренние отступы в значениях,
@@ -48,7 +49,7 @@ p {
 body {
   margin: 0;
   /* обнуляем отступы */
-  font-family: "BebasNeueBold", "Open Sans", sans-serif;
+  font-family: "BebasNeueBold", "Open Sans", sans-serif, "Bebas Neue";
   width: 1440px;
   height: 2810px;
   /* font-weight: 400; */
@@ -103,9 +104,10 @@ body {
   font-family: "Bebas Neue";
   font-size: 60px;
   font-weight: 400;
-  letter-spacing: 5px;
+  letter-spacing: 5.709px;
   text-transform: uppercase;
-  padding-left: 31px;
+  padding-left: 38px;
+  padding-top: 2px;
 }
 .text_partners h4 {
   color: #fff;
@@ -156,6 +158,7 @@ body {
 .nav_menu_items {
   display: flex;
   justify-content: space-between;
+  padding-left: 36px;
 }
 .nav_menu_item {
   list-style: none;
@@ -228,30 +231,39 @@ a:hover {
 .about {
   width: 941px;
   height: 344px;
+  margin: 0 auto;
   margin-bottom: 120px;
 }
 .container_about {
   display: flex;
-  padding-left: 251px;
-  padding-top: 58px;
+  width: 100%;
+  padding-top: 56px;
 }
 .about_h3 {
   text-transform: uppercase;
   color: var(--text-color);
   text-align: center;
-  font-family: "Open Sans Bold";
+  font-family: "Open Sans";
   font-size: 18px;
-  font-weight: 700;
+  font-weight: bold;
   letter-spacing: 2.306px;
-  padding-left: 502px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 .line {
   width: 50px;
   height: 2px;
   background: var(--accent-color);
-  margin-left: 697px;
+  margin-left: 447px;
 }
+/* либо
+about_h3::after{
+  content: ''
+  width: 50px;
+  height: 2px;
+  background: var(--accent-color);
+  display: block;
+  margin: 10px auto 0;} */
+
 .about_text {
   margin-right: 75px;
 }
@@ -263,11 +275,11 @@ a:hover {
   width: 405.076px;
   height: 81px;
   color: var(--text-color);
-  font-family: "Open Sans Bold";
+  font-family: "Open Sans";
   font-size: 20px;
   font-weight: 700;
-  line-height: 23px;
-  letter-spacing: 1.5px;
+  line-height: 26px;
+  letter-spacing: 0.188px;
   width: 405.076px;
   height: 81px;
   margin-bottom: 55px;
@@ -275,22 +287,49 @@ a:hover {
 .p_about_text {
   letter-spacing: 0.19px;
 }
-.about_img {
+.about_items {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 19px;
   min-width: 458px;
 }
-.about_img img {
+.about_item {
   width: 140px;
   height: 224px;
-  margin-top: 26px;
+  margin-top: 29px;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: "Open Sans";
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 29px; /* 120.833% */
+  letter-spacing: 0.188px;
+  padding-top: 15px;
+  padding-left: 14px;
 }
+.about_item:nth-child(1) {
+  background-image: url(img/about_plan.png);
+  background-size: cover;
+}
+.about_item:nth-child(2) {
+  background-image: url(img/about_manage.png);
+  background-size: cover;
+}
+.about_item:nth-child(3) {
+  background-image: url(img/about_deliver.png);
+  background-size: cover;
+}
+/* На каждый элемент ставим свой фон */
 
 @media only screen and (max-width: 992px) {
+  .about {
+    margin-left: 0;
+    margin-bottom: 600px;
+  }
   .container_about {
     padding-left: 50px;
     flex-wrap: wrap;
+    height: 350px;
   }
   .about_h3 {
     padding-top: 200px;
@@ -299,12 +338,11 @@ a:hover {
   .h3_about_text {
     font-size: 150%;
   }
-  .about_img {
+  /* .about_items {
     width: 100%;
-  }
-  .about_img img {
-    width: 150%;
-    height: auto;
+   } */
+  .about_item {
+    width: 100%;
   }
   .p_about_text {
     font-size: 150%;
@@ -388,7 +426,7 @@ button {
   height: 330px;
 }
 .cards_h4 {
-  width: 90%;
+  width: 100%;
   height: 48px;
   flex-direction: column;
   justify-content: center;
@@ -417,9 +455,6 @@ button {
   letter-spacing: 0.188px;
 }
 @media only screen and (max-width: 992px) {
-  .about {
-    margin-bottom: 800px;
-  }
   .Services {
     margin-left: 50px;
   }
@@ -484,7 +519,7 @@ button {
   font-size: 22px;
   font-weight: 700;
   width: 100%;
-  margin-left: 273px;
+  margin-left: 280px;
   margin-right: 0px;
   padding-right: 0px;
   padding-bottom: 2px;
@@ -563,7 +598,7 @@ button {
 .footer_links {
   width: 262px;
   height: 150px;
-  margin-left: 35px;
+  margin-left: 16px;
 }
 .footer_links_p {
   color: #fff;
@@ -615,7 +650,7 @@ button {
 }
 .footer_contacts {
   width: 141px;
-  margin-left: 32px;
+  /* margin-left: 32px; */
 }
 .contacts_p {
   color: #fff;
@@ -669,7 +704,7 @@ button {
   }
   .footer_company {
     width: 100%;
-    padding-left: 50px;
+    padding-left: 40px;
     padding-top: 30px;
   }
   .company_p_text {
@@ -678,9 +713,11 @@ button {
   .footer_links {
     width: 50%;
     justify-content: space-evenly;
+    margin-left: 40px;
   }
   .footer_contacts {
     width: 100%;
+    padding-left: 50px;
   }
   .footer_menu_item a {
     font-size: 15px;
